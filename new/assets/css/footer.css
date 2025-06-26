@@ -1,0 +1,84 @@
+.gp.liens-legaux {
+    display: flex
+;
+    justify-content: center;
+}
+.band.gp {
+    background-color: #000;
+    color: #fff;
+}
+.band {
+    display: block;
+    position: relative;
+    color: #fff;
+    border-top: 1px solid #555;
+    background-color: #000;
+    font-family: o-HelveticaNeue, Arial, sans-serif;
+}
+
+.band {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    font-family: o-HelveticaNeue, Arial, sans-serif;
+    padding: 1.25em calc(3.75em + (100% - 90em) / 2);
+}
+
+.gp.liens-legaux .size-limit {
+    display: flex
+;
+    gap: .625em 1.875em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 64em;
+}
+
+.gp.liens-legaux .size-limit a {
+    white-space: nowrap;
+}
+
+.liens-legaux a, .liens-legaux span {
+    display: inline-block;
+    font-size: .875em;
+}
+
+.screen-reader-only {
+    position: absolute;
+    width: px2em(1);
+    height: px2em(1);
+    padding: 0;
+    margin: px2em(-1);
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    font-size: .01px;
+}
+
+a, button.as-link {
+    display: inline-block;
+    clear: both;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    outline-offset: 6px !important;
+    transition: outline-offset .15s ease-in-out !important;
+}
+
+.gp.liens-legaux .size-limit .non-breakable {
+    white-space: nowrap;
+    display: inline-flex
+;
+    gap: 0.625em 1.875em;
+}
+
+.gp.liens-legaux .size-limit span.separator {
+    display: inline-block;
+    width: 0px;
+    height: 1em;
+    border-left: 1px solid rgb(85, 85, 85);
+}

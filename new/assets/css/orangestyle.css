@@ -1,0 +1,54 @@
+[v-cloak] {
+    display: none;
+  }
+
+html, body {
+    height: 100% !important;
+    margin: 0 !important;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  #root {
+    flex: 1 !important; /* main prend tout lâ€™espace dispo */
+  }
+  
+  #o-footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* pour quâ€™il soit au-dessus */
+  }
+
+  .error-label {
+    color: red !important;
+    font-weight:700 !important
+  }
+
+  .form-control-placeholder {
+    position: absolute;
+    top: 50%;
+    
+    transition: all 0.2s ease;
+    pointer-events: none;
+    padding: 2.1875rem 3.375rem .8125rem 0;
+  }
+  
+  .form-control-placeholder-shift {
+    height: 2rem;
+    padding-top: .75rem !important;
+    padding-bottom: 0;
+    line-height: 1.428571429 !important;
+    cursor: auto;
+    border-bottom: none;
+    transform: translateZ(0);
+  }
+
+  .alert-container.alert-container-sm.alert-danger.invalid-feedback {
+    border-top: solid 2px #e70002;
+  }

